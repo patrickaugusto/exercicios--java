@@ -1,49 +1,55 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
- */
+/******************************************************************************
 
-package com.mycompany.main;
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
 
-/**
- *
- * @Patrick Nascimento
- */
+*******************************************************************************/
 import java.util.Scanner;
 
-public class Main {
 
-    public static void main(String[] args) {
-        Scanner scanner;
-		scanner = new Scanner(System.in);
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		//
+		int familia, filhos, filhosT = 0, filhosM;
+		float renda, rendaT = 0, rendaM;
+		
+		System.out.print("Digite o número de familias na cidade: ");
+		familia = scanner.nextInt();
 		
 		
-		int familias, filhos, i;
-		float mediaF, filhos_final;
-		float renda, mediaR, renda_final;
-                i = 0;
-		filhos_final = 0;
-		renda_final = 0;
-		System.out.print("Digite o numero de estudantes cadastrados em sala: ");
-		familias = scanner.nextInt();
 		
-		    while(i < familias){
+		//Parte de repetição
+		for(int i = 0; i < familia; i++){
 		    
-		       System.out.print("Digite o número de filhos da familia atual: ");
-			   filhos = scanner.nextInt();
-			   filhos_final = filhos + filhos_final;
+		    //Perguntar o numero e fazer o calculo total de todas as familias
+		    System.out.print("Digite o numero de filhos da familia atual: ");
+		    filhos = scanner.nextInt();
+		    filhosT = (filhos + filhosT);
 		    
-                           System.out.println("Digite a renda mensal da familia atual: ");
-                           renda = scanner.nextFloat();
-                           renda_final = renda + renda_final;
-                           
-                           
-                           
-	       i++;
-		   }
-		   mediaF = filhos_final/familias;
-		System.out.print("A média de filhos por familia é: "+ mediaF);
-                mediaR = renda_final/familias;
-                System.out.print("A media da renda mensal pro famlia é: "+mediaR);
-}
+		    
+		    //Perguntar a renda e fazer o calculo total de todas as familias
+		    System.out.print("Digite o valor da renda mensal da familia atual: ");
+		    renda = scanner.nextInt();
+		    rendaT = (renda + rendaT);
+		    
+		    
+		    System.out.println("");
+		    
+		    
+		}
+		
+		//fazer o calculo da media de filhos e renda e mosntrar na tela
+		filhosM = filhosT/familia;
+		rendaM = rendaT/familia;
+		System.out.println("A média de filhos por familia é: " + filhosM);
+		System.out.print("A média da renda mensal por familia é: " + rendaM);
+		   
+		    
+		    
+	}
 }
