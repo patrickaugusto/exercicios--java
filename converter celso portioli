@@ -1,0 +1,71 @@
+/******************************************************************************
+
+ Escreva um programa que, com base em uma temperatura em graus celsius, a converta e exiba em Kelvin (K), Réaumur (Re), Rankine (Ra) e Fahrenheit (F), 
+ seguindo as fórmulas: 
+ F = C * 1.8 + 32; 
+ K = C + 273.15; 
+ Re = C * 0.8; 
+ Ra = C * 1.8 + 32 + 459.67
+*******************************************************************************/
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    double c, k, re, ra, f;
+	    int opcao;
+	    Scanner scanner = new Scanner(System.in); 
+	    
+	    
+	    do{
+	        
+	        menu();
+	        opcao = scanner.nextInt();
+	        
+	        switch (opcao){
+	            case 1: 
+	            System.out.print("\n Digite o valor em Celsius: ");
+		        c = scanner.nextFloat();
+		        k = c + 273.15;
+		        System.out.println("O valor de "+c+" em Kelvin é: "+k+"\n");
+	            break;
+	            
+	            case 2: 
+	            System.out.print("\n Digite o valor em Celsius: ");
+		        c = scanner.nextFloat();
+		        re = c * 0.8;
+		        System.out.println("O valor de "+c+" em Réaumur é: "+re+"\n");
+	            break;
+	            
+	            case 3: 
+	            System.out.print("\n Digite o valor em Celsius: ");
+		        c = scanner.nextFloat();
+		        ra = (c * 1.8) + 32 + 459.67;
+		        System.out.println("O valor de "+c+" em Rankine é: "+ra+"\n");
+	            break;
+	            
+	            case 4: 
+	            System.out.print("\n Digite o valor em Celsius: ");
+		        c = scanner.nextFloat();
+		        f = (c * 1.8) + 32;
+		        System.out.println("O valor de "+c+" em Fahrenheit é: "+f+"\n");
+	            break;
+	        }
+	    
+		
+	
+	    }while(opcao!=0);
+	        
+	}
+	
+	
+	private static void menu(){
+	    System.out.println("Kelvin (1)");
+	    System.out.println("Réaumur (2)");
+	    System.out.println("Rankine (3)");
+	    System.out.println("Fahrenheit (4)");
+	    System.out.println("Pressione 0 para encerrar o programa!");
+	    System.out.print("Escolha acima para qual forma converter Celsius(digite o numero): ");
+	}
+}
